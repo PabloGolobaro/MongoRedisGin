@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "MongoRedisGin/pb";
+
+import "user.proto";
+
+
+
+message SignUpUserInput{
+  string name = 1;
+  string email = 2;
+  string password = 3;
+  string passwordConfirm = 4;
+
+}
+message SignUpUserResponce{
+  User user = 1;
+}

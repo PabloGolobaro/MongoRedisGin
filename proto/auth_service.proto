@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package pb;
+
+import "rpc_signup_user.proto";
+import "user.proto";
+import "rpc_sign_in_user.proto";
+
+option go_package = "MongoRedisGin/pb";
+
+service AuthService{
+  rpc SignUpUser(SignUpUserInput) returns (GenericResponce){}
+  rpc VerifyEmail(VerifyEmailRequest) returns (GenericResponce){}
+  rpc SignInUser(SignInUserInput) returns (SignInUserResponse){}
+}
+message VerifyEmailRequest {string verificationCode = 1;}

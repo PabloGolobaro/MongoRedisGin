@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "MongoRedisGin/pb";
+
+import "user.proto";
+
+service UserService{
+  rpc GetMe(GetMeRequest) returns (UserResponse){}
+}
+message GetMeRequest  {string Id = 1;}
